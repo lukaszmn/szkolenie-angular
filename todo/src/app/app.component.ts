@@ -38,4 +38,8 @@ export class AppComponent {
     }
   }
 
+  addItem(name: string) {
+    this.list.list.push(new TodoItem(name));
+  }
+
 }
