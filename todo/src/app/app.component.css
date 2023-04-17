@@ -1,0 +1,65 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ::ng-deep html,
+::ng-deep body {
+  margin: 0;
+  padding: 0;
+} */
+
+header {
+  padding: 15px;
+  background: #2975be;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.pole-tekstowe {
+  margin: 20px 0;
+}
+
+.pole-tekstowe label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+}
+
+input[type=checkbox] {
+  margin-left: 0;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+.checkbox label {
+  font-size: 0.8rem;
+}
+
+button {
+  margin-top: 20px;
+  background: #2975be;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 2px;
+}
+
+input[type=text] {
+  height: 20px;
+}
+
+.zawartosc {
+  padding: 10px;
+}
