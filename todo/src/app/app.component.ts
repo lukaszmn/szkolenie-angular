@@ -11,4 +11,8 @@ export class AppComponent {
 
   list = new TodoList();
 
+  itemCount(): number {
+    return this.list.list.length;
+  }
+
 }
