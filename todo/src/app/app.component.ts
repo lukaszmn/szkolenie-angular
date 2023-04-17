@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoList } from './todo-list';
+import { TodoItem } from './todo-item';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,15 @@ export class AppComponent {
   title = 'todo';
 
   list = new TodoList();
+
+  showCompleted = false;
+
+  get tasks(): TodoItem[] {
+    if (this.showCompleted)
+      return this.list.list;
+    else
+      return this.list.list.filter(x => x.complete === false);
+  }
 
   itemCount(): number {
     return this.list.list.length;
