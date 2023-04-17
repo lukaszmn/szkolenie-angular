@@ -2,6 +2,15 @@
   Nagłówek
 </div>
 
-<ul>
-  <li *ngFor="let item of list.list">{{ item }}</li>
-</ul>
+<table class="table table-striped table-bordered mt-5 table-sm">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list.list">
+      <td>{{item}}</td>
+    </tr>
+  </tbody>
+</table>
