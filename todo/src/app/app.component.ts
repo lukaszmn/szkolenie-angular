@@ -14,6 +14,8 @@ export class AppComponent {
 
   showCompleted = false;
 
+  selectedProduct: string | null = '';
+
   get tasks(): TodoItem[] {
     if (this.showCompleted)
       return this.list.list;
@@ -40,6 +42,15 @@ export class AppComponent {
 
   addItem(name: string) {
     this.list.list.push(new TodoItem(name));
+  }
+
+  select(event: Event) {
+    this.selectedProduct = (event.target as HTMLInputElement).value;
+  }
+
+  selectRow(event: Event, nazwa: string) {
+    this.selectedProduct = nazwa;
+    (event.target as HTMLInputElement).classList.add('bg-info');
   }
 
 }
