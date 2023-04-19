@@ -3,6 +3,18 @@
   <h2 class="text-white text-center"> {{ zadania.nazwa }} </h2>
 </header>
 
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col">
+      <!-- <input class="form-control" placeholder="Dodaj zadanie" #nazwa /> -->
+      <input class="form-control" placeholder="Dodaj zadanie" [(ngModel)]="nazwaNowegoZadania" />
+    </div>
+    <div class="col-auto">
+      <!-- <button class="btn btn-primary" (click)="dodajZadanie(nazwa.value); nazwa.value = ''">Dodaj</button> -->
+      <button class="btn btn-primary" (click)="dodajZadanie2()">Dodaj</button>
+    </div>
+</div>
+
 <div class="container-fluid">
   <table class="table table-striped mt-5">
     <thead>

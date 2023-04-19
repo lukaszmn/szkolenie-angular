@@ -47,4 +47,17 @@ export class AppComponent {
       return `${ilosc} zadań`;
   }
 
+  dodajZadanie(nazwa: string) {
+    if (nazwa !== '')  // nazwa.length > 0
+      this.zadania.lista.push(new Zadanie(nazwa));
+  }
+
+  dodajZadanie2() {
+    if (this.nazwaNowegoZadania !== '')  // this.nazwaNowegoZadania.length > 0
+      this.zadania.lista.push(new Zadanie(this.nazwaNowegoZadania));
+    this.nazwaNowegoZadania = '';
+  }
+
+  nazwaNowegoZadania: string = '';
+
 }
