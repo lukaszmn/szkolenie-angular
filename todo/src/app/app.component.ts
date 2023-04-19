@@ -26,8 +26,8 @@ export class AppComponent {
   }
 
   itemCountText(): string {
-    let s = '' + this.list.list.length;
-    switch (this.list.list.length) {
+    let s = '' + this.tasks.length;
+    switch (this.tasks.length) {
       case 1: return s + ' zadanie';
       case 2:
       case 3:
@@ -37,6 +37,17 @@ export class AppComponent {
         return s + ' zadań';
     }
   }
+
+  data = new Date();
+
+  zadanieMapa = {
+    '=0': 'Brak zadań',
+    '=1': '1 zadanie',
+    '=2': '# zadania',
+    '=3': '# zadania',
+    '=4': '# zadania',
+    'other': '# zadań'
+  };
 
   addItem(name: string) {
     this.list.list.push(new TodoItem(name));

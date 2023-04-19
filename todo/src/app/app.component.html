@@ -41,6 +41,13 @@
 
 <p>Razem: {{ itemCountText() }}</p>
 
+<p>Razem: {{ tasks.length | i18nPlural:zadanieMapa:'pl-PL' }}</p>
+<p>Razem: {{ tasks.length | liczbaZadan }}</p>
+<p>{{ data | date:'YYYY-MM-dd HH:mm:ss' }}</p>
+
+<p>{{ 15.9 | currency:'PLN':'code':'1.3-3' }}</p>
+<p>{{ 15.9 | currency:'PLN':'symbol-narrow' }}</p>
+
 <div class="text-bg-secondary p-2">
   <input type="checkbox" [(ngModel)]="showCompleted" id="showCompleted" />
   <label for="showCompleted">Pokaż ukończone</label>
