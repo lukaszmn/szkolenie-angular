@@ -3,17 +3,35 @@
   <h2 class="text-white text-center"> {{ zadania.nazwa }} </h2>
 </header>
 
-<table class="table table-striped mt-5">
-  <thead>
-    <tr>
-      <th>Nr</th>
-      <th>Zadanie</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let element of zadania.lista; let nr = index">
-      <td>{{ nr + 1 }}</td>
-      <td>{{ element }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <table class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th>Nr</th>
+        <th>Zadanie</th>
+        <th>Zakończone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of listaZadan(); let nr = index">
+        <td>{{ nr + 1 }}</td>
+        <td>{{ element.nazwa }}</td>
+        <td>
+          <input type="checkbox" class="form-check-input" [(ngModel)]="element.zakonczone" />
+          {{ element.zakonczone ? 'TAK' : '' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>{{ iloscZadan() }}</p>
+
+  <div class="text-bg-secondary p-2 rounded">
+
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+        [(ngModel)]="pokazUkonczone">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Pokaż ukończone</label>
+    </div>
+  </div>
+</div>
