@@ -11,7 +11,6 @@ export class FormatujZadanieDirective {
   @HostBinding('class') klasa = '';
 
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked');
     this.klasa = this.zadanie?.zakonczone ? 'text-decoration-line-through' : '';
   }
 

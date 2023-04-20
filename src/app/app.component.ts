@@ -9,8 +9,6 @@ import { ListaZadanService } from './lista-zadan.service';
 })
 export class AppComponent {
 
-  data = new Date();
-
   constructor(public dane: ListaZadanService) {
     console.log(dane.zadania.nazwa);
   }
