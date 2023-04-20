@@ -27,7 +27,7 @@
     <tbody>
       <tr *ngFor="let element of listaZadan(); let nr = index">
         <td>{{ nr + 1 }}</td>
-        <td>{{ element.nazwa }}</td>
+        <td [formatujZadanie]="element">{{ element.nazwa }}</td>
         <td>
           <input type="checkbox" class="form-check-input" [(ngModel)]="element.zakonczone" />
           {{ element.zakonczone ? 'TAK' : '' }}

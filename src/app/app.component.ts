@@ -18,7 +18,6 @@ export class AppComponent {
 
   listaZadan(): Zadanie[] {
     if (this.pokazUkonczone) {
-      console.log('Pokaż ukończone');
       return this.zadania.lista;
     } else {
       return this.zadania.lista.filter(function(element) {
