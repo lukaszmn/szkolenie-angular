@@ -8,6 +8,8 @@ import { FormatujZadanieDirective } from './formatujZadanie.directive';
 import { LiczbaZadanComponent } from './liczba-zadan/liczba-zadan.component';
 import { FiltrComponent } from './filtr/filtr.component';
 import { LiczbaZadanPipe } from './liczba-zadan.pipe';
+import { NaglowekComponent } from './naglowek/naglowek.component';
+import { ListaZadanComponent } from './lista-zadan/lista-zadan.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { LiczbaZadanPipe } from './liczba-zadan.pipe';
     LiczbaZadanComponent,
     FiltrComponent,
     LiczbaZadanPipe,
+    NaglowekComponent,
+    ListaZadanComponent,
   ],
   imports: [
     BrowserModule,

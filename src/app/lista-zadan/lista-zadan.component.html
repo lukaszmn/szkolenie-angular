@@ -1,0 +1,19 @@
+<table class="table table-striped mt-5">
+  <thead>
+    <tr>
+      <th>Nr</th>
+      <th>Zadanie</th>
+      <th>Zakończone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of lista; let nr = index">
+      <td>{{ nr + 1 }}</td>
+      <td [formatujZadanie]="element">{{ element.nazwa | titlecase }}</td>
+      <td>
+        <input type="checkbox" class="form-check-input" [(ngModel)]="element.zakonczone" />
+        {{ element.zakonczone ? 'TAK' : '' }}
+      </td>
+    </tr>
+  </tbody>
+</table>

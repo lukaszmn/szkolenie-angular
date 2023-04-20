@@ -1,7 +1,4 @@
-<header class="container-fluid bg-primary p-3 ">
-  <h1 class="text-white text-center m-0">Lista zadań</h1>
-  <h2 class="text-white text-center"> {{ zadania.nazwa }} </h2>
-</header>
+<app-naglowek [nazwaZadania]="zadania.nazwa"></app-naglowek>
 
 <div class="container-fluid my-4">
   <div class="row">
@@ -16,25 +13,8 @@
 </div>
 
 <div class="container-fluid">
-  <table class="table table-striped mt-5">
-    <thead>
-      <tr>
-        <th>Nr</th>
-        <th>Zadanie</th>
-        <th>Zakończone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let element of listaZadan(); let nr = index">
-        <td>{{ nr + 1 }}</td>
-        <td [formatujZadanie]="element">{{ element.nazwa | titlecase }}</td>
-        <td>
-          <input type="checkbox" class="form-check-input" [(ngModel)]="element.zakonczone" />
-          {{ element.zakonczone ? 'TAK' : '' }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+  <app-lista-zadan [lista]="listaZadan()"></app-lista-zadan>
 
   <app-liczba-zadan [lista]="listaZadan()"></app-liczba-zadan>
 
