@@ -1,10 +1,12 @@
  export class ListaZadan {
 
-  constructor(nazwa: string) {
+  constructor(nazwa: string, dataUtworzenia: Date) {
     this.nazwa = nazwa;
+    this.dataUtworzenia = dataUtworzenia;
   }
 
   nazwa: string;
+  dataUtworzenia: Date;
 
   lista: Zadanie[] = [
     new Zadanie('Kupić telefon'),

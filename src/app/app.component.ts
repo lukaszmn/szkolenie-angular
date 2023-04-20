@@ -8,9 +8,11 @@ import { ListaZadan, Zadanie } from './todoList';
 })
 export class AppComponent {
 
-  zadania = new ListaZadan('Obowiązki'); // CTRL .
+  zadania = new ListaZadan('Obowiązki', new Date()); // CTRL .
 
   pokazUkonczone = true;
+
+  data = new Date();
 
   constructor() {
     console.log(this.zadania.nazwa);
@@ -32,18 +34,6 @@ export class AppComponent {
 
     return this.zadania.lista.filter(element => element.zakonczone === false);
     */
-  }
-
-  iloscZadan(): string {
-    const ilosc = this.listaZadan().length;
-    if (ilosc === 0)
-      return 'Brak zadań';
-    else if (ilosc === 1)
-      return '1 zadanie';
-    else if (ilosc <= 4)
-      return `${ilosc} zadania`;
-    else
-      return `${ilosc} zadań`;
   }
 
   dodajZadanie(nazwa: string) {

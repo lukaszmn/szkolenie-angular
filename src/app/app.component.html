@@ -27,7 +27,7 @@
     <tbody>
       <tr *ngFor="let element of listaZadan(); let nr = index">
         <td>{{ nr + 1 }}</td>
-        <td [formatujZadanie]="element">{{ element.nazwa }}</td>
+        <td [formatujZadanie]="element">{{ element.nazwa | titlecase }}</td>
         <td>
           <input type="checkbox" class="form-check-input" [(ngModel)]="element.zakonczone" />
           {{ element.zakonczone ? 'TAK' : '' }}
@@ -36,14 +36,19 @@
     </tbody>
   </table>
 
-  <p>{{ iloscZadan() }}</p>
+  <app-liczba-zadan [lista]="listaZadan()"></app-liczba-zadan>
 
-  <div class="text-bg-secondary p-2 rounded">
+  <app-filtr (zmianaFiltra)="pokazUkonczone = $event"></app-filtr>
 
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-        [(ngModel)]="pokazUkonczone">
-      <label class="form-check-label" for="flexSwitchCheckDefault">Pokaż ukończone</label>
-    </div>
-  </div>
+  {{ zadania.dataUtworzenia | date:'short' }}
+
+  <!-- <p>{{ 0.0524552 | percent:'3.1-1' }}</p>
+  <p>{{ 0.0524552 | number:'1.2-2' }}</p>
+
+  <p>{{ 0.0524552 | number }}</p>
+
+  <p>{{ 1.5 | currency:'PLN':'symbol':'1.3-3' }}</p>
+
+  <p> {{ data }}</p>
+  <p> {{ data | date:'YYYY-MM-dd HH:mm' }} -->
 </div>
