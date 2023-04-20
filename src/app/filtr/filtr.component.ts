@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { ListaZadanService } from '../lista-zadan.service';
 
 @Component({
   selector: 'app-filtr',
@@ -7,12 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class FiltrComponent {
 
-  @Output() zmianaFiltra = new EventEmitter<boolean>();
-
-  pokazUkonczone = true;
-
-  zmiana() {
-    this.zmianaFiltra.emit(this.pokazUkonczone);
+  constructor(public dane: ListaZadanService) {
   }
 
 }

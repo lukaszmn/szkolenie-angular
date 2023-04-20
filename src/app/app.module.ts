@@ -10,6 +10,7 @@ import { FiltrComponent } from './filtr/filtr.component';
 import { LiczbaZadanPipe } from './liczba-zadan.pipe';
 import { NaglowekComponent } from './naglowek/naglowek.component';
 import { ListaZadanComponent } from './lista-zadan/lista-zadan.component';
+import { ListaZadanService } from './lista-zadan.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ListaZadanComponent } from './lista-zadan/lista-zadan.component';
     FormsModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'pl-PL' }
+    { provide: LOCALE_ID, useValue: 'pl-PL' },
+    ListaZadanService,
   ],
   bootstrap: [AppComponent]
 })
