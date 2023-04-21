@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormatujZadanieDirective } from './formatujZadanie.directive';
 import { LiczbaZadanComponent } from './liczba-zadan/liczba-zadan.component';
 import { FiltrComponent } from './filtr/filtr.component';
@@ -25,7 +25,8 @@ import { ListaZadanService } from './lista-zadan.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pl-PL' },

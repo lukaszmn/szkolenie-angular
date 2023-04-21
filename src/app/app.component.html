@@ -1,3 +1,41 @@
+<input [(ngModel)]="imie" required minlength="4" maxlength="10" pattern="\d\d-\d\d\d" #imie1="ngModel">
+<button (click)="zapiszImie(imie1)">Zapisz</button>
+<ul class="text-danger list-unstyled" *ngIf="imie1.touched && imie1.invalid">
+  <li *ngIf="imie1.errors?.['required']">Proszę podać imię.</li>
+  <li *ngIf="imie1.errors?.['pattern']">Proszę podać kod pocztowy w formacie 00-000.</li>
+  <li *ngIf="imie1.errors?.['minlength']">
+    Imię musi składać się przynajmniej z {{imie1.errors?.['minlength'].requiredLength}} znaków.
+  </li>
+</ul>
+
+<hr>
+
+<input [formControl]="poleImie" />
+<button (click)="zmien()">Zmień</button>
+<button (click)="zapisz()">Zapisz</button>
+<ul class="text-danger list-unstyled" *ngIf="(poleImie.touched || poleImie.dirty) && poleImie.invalid">
+  <li *ngIf="poleImie.errors?.['required']">Proszę podać imię.</li>
+  <li *ngIf="poleImie.errors?.['niedozwolonaNazwa']">Nie możesz nazywać się Adam.</li>
+  <li *ngIf="poleImie.errors?.['minlength']">
+    Imię musi składać się przynajmniej z {{poleImie.errors?.['minlength'].requiredLength}} znaków.
+  </li>
+</ul>
+
+<hr>
+
+<form [formGroup]="form" >
+
+  <label for="first-name">Imię:</label>
+  <input id="first-name" type="text" formControlName="imie">
+
+  <label for="last-name">Nazwisko:</label>
+  <input id="last-name" type="text" formControlName="nazwisko">
+
+  <button (click)="zmienFormularz()">Zmień</button>
+  <button (click)="zapiszFormularz()">Zapisz</button>
+
+</form>
+
 <app-naglowek [nazwaZadania]="dane.zadania.nazwa"></app-naglowek>
 
 <div class="container-fluid my-4">
