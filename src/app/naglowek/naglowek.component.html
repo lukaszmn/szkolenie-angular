@@ -3,6 +3,10 @@
     <h1 class="text-white text-center m-0">
       Lista zadań | {{ nazwaZadania }}
     </h1>
-    <a class="text-white fs-6 ms-auto" routerLink="/login">Zaloguj</a>
+    <a class="text-white fs-6 ms-auto" routerLink="/login" *ngIf="!loginService.uzytkownik">Zaloguj</a>
+    <div class="text-white fs-6 ms-auto d-flex align-items-center" *ngIf="loginService.uzytkownik">
+      Witaj, {{ loginService.uzytkownik }}
+      <button class="btn btn-link text-white" (click)="loginService.wyloguj()">Wyloguj</button>
+    </div>
   </div>
 </header>

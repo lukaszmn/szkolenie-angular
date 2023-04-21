@@ -5,17 +5,19 @@
       Logowanie
     </div>
     <div class="card-body">
-      <form [formGroup]="form" class="p-3">
+      <form [formGroup]="form" class="p-3" (ngSubmit)="zaloguj()">
 
         <div class="row">
           <label for="login1" class="form-label">Login:</label>
-          <input id="login1" type="text" class="form-control" formGroupName="login" />
+          <input id="login1" type="text" class="form-control" formControlName="login" />
         </div>
 
         <div class="row mt-sm-3">
           <label for="haslo" class="form-label">Hasło:</label>
-          <input id="haslo" type="text" class="form-control" formGroupName="haslo" />
+          <input id="haslo" type="password" class="form-control" formControlName="haslo" />
         </div>
+
+        <p class="text-danger mt-3" *ngIf="blad">{{ blad }}</p>
 
         <div class="row mt-5">
           <button class="btn btn-primary">Zaloguj</button>

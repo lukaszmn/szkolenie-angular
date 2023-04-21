@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-naglowek',
@@ -8,4 +9,6 @@ import { Component, Input } from '@angular/core';
 export class NaglowekComponent {
 
   @Input() nazwaZadania?: string;
+
+  constructor(public loginService: LoginService) {}
 }
