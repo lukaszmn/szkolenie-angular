@@ -3,16 +3,13 @@
   constructor(nazwa: string, dataUtworzenia: Date) {
     this.nazwa = nazwa;
     this.dataUtworzenia = dataUtworzenia;
+    console.log(JSON.stringify(this, null, 2));
   }
 
   nazwa: string;
   dataUtworzenia: Date;
 
-  lista: Zadanie[] = [
-    new Zadanie('Kupić telefon'),
-    new Zadanie('Wymienić opony', true),
-    new Zadanie('Wynieść śmieci'),
-  ];
+  lista: Zadanie[] = [];
 
 }
 

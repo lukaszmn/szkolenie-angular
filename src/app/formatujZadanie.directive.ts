@@ -1,5 +1,5 @@
 import { Directive, HostBinding, Input } from '@angular/core';
-import { Zadanie } from './todoList';
+import { Zadanie } from './model/todoList';
 
 @Directive({
   selector: '[formatujZadanie]'

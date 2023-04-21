@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Zadanie } from './todoList';
+import { Zadanie } from './model/todoList';
 
 @Pipe({
   name: 'liczbaZadan'

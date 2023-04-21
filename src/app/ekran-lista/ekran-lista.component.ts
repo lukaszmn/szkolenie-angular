@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ListaZadanService } from '../lista-zadan.service';
-import { Zadanie } from '../todoList';
+import { Zadanie } from '../model/todoList';
 
 @Component({
   selector: 'app-ekran-lista',
@@ -19,8 +19,10 @@ export class EkranListaComponent {
   }
 
   dodajZadanie2() {
-    if (this.nazwaNowegoZadania !== '')  // this.nazwaNowegoZadania.length > 0
+    if (this.nazwaNowegoZadania !== '') { // this.nazwaNowegoZadania.length > 0
       this.dane.zadania.lista.push(new Zadanie(this.nazwaNowegoZadania));
+      this.dane.zapisz();
+    }
     this.nazwaNowegoZadania = '';
   }
 

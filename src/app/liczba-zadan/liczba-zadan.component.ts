@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Zadanie } from '../todoList';
+import { Zadanie } from '../model/todoList';
 
 @Component({
   selector: 'app-liczba-zadan',

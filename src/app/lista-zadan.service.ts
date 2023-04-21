@@ -1,10 +1,22 @@
 import { Injectable } from '@angular/core';
-import { ListaZadan, Zadanie } from './todoList';
+import { ListaZadan, Zadanie } from './model/todoList';
+import { ModelService } from './model/model.service';
 
 @Injectable()
 export class ListaZadanService {
 
-  zadania = new ListaZadan('Obowiązki', new Date()); // CTRL .
+  readonly ID_LISTY = 1;
+
+  zadania = new ListaZadan('', new Date()); // CTRL .
+
+  constructor(private model: ModelService) {
+    model.pobierzListe(this.ID_LISTY)
+      .subscribe(pobraneZadania => this.zadania = pobraneZadania);
+  }
+
+  zapisz() {
+    this.model.zapiszListe(this.ID_LISTY, this.zadania).subscribe();
+  }
 
   pokazUkonczone = true;
 

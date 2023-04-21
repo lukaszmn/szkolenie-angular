@@ -1,0 +1,37 @@
+{
+  "listy": [
+    {
+      "id": 1,
+      "lista": [
+        {
+          "nazwa": "Kupić telefon",
+          "zakonczone": true
+        },
+        {
+          "nazwa": "Wymienić opony",
+          "zakonczone": true
+        },
+        {
+          "nazwa": "Wynieść śmieci",
+          "zakonczone": false
+        },
+        {
+          "nazwa": "Abc",
+          "zakonczone": false
+        }
+      ],
+      "nazwa": "Obowiązki",
+      "dataUtworzenia": "2023-04-21T16:33:15.905Z"
+    }
+  ],
+  "uzytk": [
+    {
+      "id": "jan",
+      "email": "jan@kowalski.pl"
+    },
+    {
+      "id": "adam",
+      "email": "adam@nowak.pl"
+    }
+  ]
+}

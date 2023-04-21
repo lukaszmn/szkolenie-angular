@@ -11,7 +11,7 @@
       <td>{{ nr + 1 }}</td>
       <td [formatujZadanie]="element">{{ element.nazwa | titlecase }}</td>
       <td>
-        <input type="checkbox" class="form-check-input" [(ngModel)]="element.zakonczone" />
+        <input type="checkbox" class="form-check-input" [(ngModel)]="element.zakonczone" (change)="zadanieUkonczone.emit()" />
         {{ element.zakonczone ? 'TAK' : '' }}
       </td>
     </tr>

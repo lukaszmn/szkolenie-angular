@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Zadanie } from '../todoList';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Zadanie } from '../model/todoList';
 
 @Component({
   selector: 'app-lista-zadan',
@@ -10,4 +10,5 @@ export class ListaZadanComponent {
 
   @Input() lista?: Zadanie[];
 
+  @Output() zadanieUkonczone = new EventEmitter<void>();
 }

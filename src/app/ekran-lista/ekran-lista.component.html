@@ -14,7 +14,7 @@
 
 <div class="container-fluid">
 
-  <app-lista-zadan [lista]="dane.listaZadan()"></app-lista-zadan>
+  <app-lista-zadan [lista]="dane.listaZadan()" (zadanieUkonczone)="dane.zapisz()"></app-lista-zadan>
 
   <app-liczba-zadan [lista]="dane.listaZadan()"></app-liczba-zadan>
 
