@@ -1,0 +1,27 @@
+<div class="container-fluid vh-100 d-flex">
+
+  <div class="card w-50 align-self-center mx-auto">
+    <div class="card-header text-center">
+      Logowanie
+    </div>
+    <div class="card-body">
+      <form [formGroup]="form" class="p-3">
+
+        <div class="row">
+          <label for="login1" class="form-label">Login:</label>
+          <input id="login1" type="text" class="form-control" formGroupName="login" />
+        </div>
+
+        <div class="row mt-sm-3">
+          <label for="haslo" class="form-label">Hasło:</label>
+          <input id="haslo" type="text" class="form-control" formGroupName="haslo" />
+        </div>
+
+        <div class="row mt-5">
+          <button class="btn btn-primary">Zaloguj</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

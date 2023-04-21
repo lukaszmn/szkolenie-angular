@@ -11,6 +11,7 @@ import { LiczbaZadanPipe } from './liczba-zadan.pipe';
 import { NaglowekComponent } from './naglowek/naglowek.component';
 import { ListaZadanComponent } from './lista-zadan/lista-zadan.component';
 import { ListaZadanService } from './lista-zadan.service';
+import { EkranListaComponent } from './ekran-lista/ekran-lista.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,12 @@ import { ListaZadanService } from './lista-zadan.service';
     LiczbaZadanPipe,
     NaglowekComponent,
     ListaZadanComponent,
+    EkranListaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pl-PL' },
