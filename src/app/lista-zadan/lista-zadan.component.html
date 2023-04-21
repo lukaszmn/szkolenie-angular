@@ -10,7 +10,7 @@
     <tr *ngFor="let element of lista; let nr = index">
       <td>{{ nr + 1 }}</td>
       <td [formatujZadanie]="element">{{ element.nazwa | titlecase }}</td>
-      <td>
+      <td data-testid="zakonczone">
         <input type="checkbox" class="form-check-input" [(ngModel)]="element.zakonczone" (change)="zadanieUkonczone.emit()" />
         {{ element.zakonczone ? 'TAK' : '' }}
       </td>
